@@ -125,6 +125,14 @@ export class Props {
     //
   };
 
+  public onPressOut?: () => void = () => {
+    return true
+  };
+
+  public onPressIn?: () => void = () => {
+    return false
+  };
+
   /**
    * 长按的回调
    */

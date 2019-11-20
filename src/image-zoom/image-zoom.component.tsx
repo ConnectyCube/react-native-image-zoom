@@ -92,6 +92,11 @@ export default class ImageViewer extends React.Component<Props, State> {
         this.isLongPress = false;
         this.isHorizontalWrap = false;
 
+        if (this.props.onPressIn) {
+          console.log('onPressIn')
+          this.props.onPressIn();
+        }
+
         // 任何手势开始，都清空单击计时器
         if (this.singleClickTimeout) {
           clearTimeout(this.singleClickTimeout);
@@ -419,6 +424,12 @@ export default class ImageViewer extends React.Component<Props, State> {
         this.imageDidMove('onPanResponderMove');
       },
       onPanResponderRelease: (evt, gestureState) => {
+
+        if(this.props.onPressOut){
+          console.log('onPressOut')
+          this.props.onPressOut();
+        }
+        
         // 取消长按
         if (this.longPressTimeout) {
           clearTimeout(this.longPressTimeout);

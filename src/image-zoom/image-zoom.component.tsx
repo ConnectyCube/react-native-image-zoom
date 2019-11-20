@@ -91,11 +91,6 @@ export default class ImageViewer extends React.Component<Props, State> {
         this.isDoubleClick = false;
         this.isLongPress = false;
         this.isHorizontalWrap = false;
-
-        if (this.props.onPressIn) {
-          this.props.onPressIn();
-        }
-
         // 任何手势开始，都清空单击计时器
         if (this.singleClickTimeout) {
           clearTimeout(this.singleClickTimeout);
@@ -118,7 +113,8 @@ export default class ImageViewer extends React.Component<Props, State> {
           if (this.props.onLongPress) {
             this.props.onLongPress();
           }
-        }, this.props.longPressTime);
+          // this.props.longPressTime interval dontWork
+        }, 250);
 
         if (evt.nativeEvent.changedTouches.length <= 1) {
           // 一个手指的情况

@@ -71,7 +71,8 @@ export class Props {
   /**
    * 长按的阈值（毫秒）
    */
-  public longPressTime?: number = 350;
+  public longPressTime?: number = 800;
+  // dont woks longPressTime?!
 
   /**
    * 双击计时器最大间隔
@@ -127,10 +128,6 @@ export class Props {
 
   public onPressOut?: () => void = () => {
     return true
-  };
-
-  public onPressIn?: () => void = () => {
-    return false
   };
 
   /**

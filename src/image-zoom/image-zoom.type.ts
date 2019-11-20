@@ -71,7 +71,7 @@ export class Props {
   /**
    * 长按的阈值（毫秒）
    */
-  public longPressTime?: number = 800;
+  public longPressTime?: number = 350;
 
   /**
    * 双击计时器最大间隔

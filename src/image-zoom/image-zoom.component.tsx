@@ -93,7 +93,6 @@ export default class ImageViewer extends React.Component<Props, State> {
         this.isHorizontalWrap = false;
 
         if (this.props.onPressIn) {
-          console.log('onPressIn')
           this.props.onPressIn();
         }
 
@@ -426,7 +425,6 @@ export default class ImageViewer extends React.Component<Props, State> {
       onPanResponderRelease: (evt, gestureState) => {
 
         if(this.props.onPressOut){
-          console.log('onPressOut')
           this.props.onPressOut();
         }
         
